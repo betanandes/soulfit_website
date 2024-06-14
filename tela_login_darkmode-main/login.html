@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Entrar</title>
+</head>
+<body>
+    <main id="container">
+        <form id="login_form" action="/index.html">
+
+            <!-- FORM HEADER -->
+            <div id="form_header">
+                <h1>Entrar</h1>
+                <i id="mode_icon" class="fa-solid fa-moon"></i>
+            </div>
+
+             <!-- SOCIAL MEDIA LINKS -->
+            <div id="social_media">
+                <a href="https://www.facebook.com/">
+                    <img src="assets/imgs/facebook.png" alt="Facebook Logo">
+                </a>
+
+                <a href="https://accounts.google.com/login?hl=pt_BR">
+                    <img src="assets/imgs/google.png" alt="Google Logo">
+                </a>
+
+                <a href="https://github.com/">
+                    <img src="assets/imgs/github.png" alt="Github Logo">
+                </a>
+            </div>
+
+            <!-- INPUTS -->
+            <div id="inputs">
+                <div class="input-box">
+                    <label for="name">
+                        Usuário
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="name" name="name" maxlength="6" required>
+                        </div>
+                    </label>
+                </div>
+                
+                <div class="input-box">
+                    <label for="password">
+                        Senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="name" name="name" maxlength="8"  required>
+                        </div>
+                    </label>
+
+            <!-- FORGOT PASSWORD -->
+                    <div id="forgot_password">
+                        <a href="#">
+                            Esqueceu sua senha?
+                        </a>
+                    </div>
+
+                    <div id="forgot_password">
+                        <a href="../registration_form/registration.html">
+                            Não possui uma conta? Crie uma aqui!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <!-- <button type="submit" id="login_button">
+                Entrar
+            </button> -->
+            <input type="submit" class="soulfit-btn" id="login_button">
+            <a class="soulfit-btn" id="login_button" href="../index.html">Voltar</a>
+
+            
+            <!-- FIM LOGIN BUTTON -->
+        </form>
+    </main>
+    <script type="text/javascript"  src="assets/js/login.js"></script>
+</body>
+</html>
