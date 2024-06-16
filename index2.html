@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Login e Senha com localStorage</title>
+
+</head>
+<body>
+    <h2>Cadastro de Login e Senha</h2>
+    <form id="form"  onsubmit="return handleRegistration()"  action="main.html">
+        <label for="newUsername">Novo Usuário:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="newPassword">Nova Senha:</label><br>
+        <input type="password" id="password" name="newPassword"><br>
+        <span id="registrationError" class="error"></span><br><br>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <script>
+        function handleRegistration() {
+            // Resetando mensagem de erro
+            document.getElementById('registrationError').textContent = "";
+
+            // Capturando valores dos campos de registro
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+
+            // Salvando novo usuário e senha no localStorage
+            localStorage.setItem('log_username', username);
+            localStorage.setItem('log_password', password);
+
+            // Exibindo mensagem de sucesso (simulação)
+            alert("Cadastro realizado com sucesso!");
+
+            // Redirecionando para a página de login (simulação)
+            //window.location.href = "index.html"; // Redirecionar para a página de login
+
+            document.getElementById('form').submit();
+
+
+            return false; // Evitar envio do formulário
+        }
+    </script>
+</body>
+</html>

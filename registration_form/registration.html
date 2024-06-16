@@ -10,106 +10,105 @@
     <div class="container">
       <div class="title">Cadastre-se</div>
       <div class="content">
-        <form id="form" class="form" action="../index.html">
+        <form id="form" class="form" onsubmit="return handleRegistration()"  action="../main.html">
           <div class="user-details">
             
             <div class="input-box">
               <span class="details">Nome completo</span>
-              <input type="text" id="fullname" placeholder="Digite seu nome completo" minlength="15" maxlength="80">
-              <a>Aqui vai a mensagem de erro...</a>
+              <input type="text" id="fullname" placeholder="Digite seu nome completo" minlength="15" maxlength="80" >
+              <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
             <div class="input-box">
               <span class="details">Data de Nascimento</span>
-              <input type="date" id="dataNasc" placeholder="">
-              <a>Aqui vai a mensagem de erro...</a>
+              <input type="date" id="dataNasc" placeholder="" >
+              <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
             <div class="input-box">
               <span class="details">E-mail</span>
-              <input type="text" id="email" placeholder="Digite seu e-mail">
-              <a>Aqui vai a mensagem de erro...</a>
+              <input type="text" id="email" placeholder="me@email.com" required> 
+              <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
             <div class="input-box">
               <span class="details">Telefone Celular</span>
-              <input type="tel" id="cel" placeholder="(xx) xxxxx-xxxx" onkeydown="ajustaTelefone(this)" onkeypress="ajustaTelefone(this)" onkeyup="ajustaTelefone(this)">
-              <a>Aqui vai a mensagem de erro...</a>
+              <input type="tel" id="cel" placeholder="(xx) xxxxx-xxxx" onkeydown="ajustaTelefone(this)" onkeypress="ajustaTelefone(this)" onkeyup="ajustaTelefone(this)" required>
+              <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
             <div class="input-box">
               <span class="details">Telefone Fixo</span>
-              <input type="tel" id="tel" placeholder="(xx) xxxx-xxxx" onkeydown="ajustaTelefone(this)" onkeypress="ajustaTelefone(this)" onkeyup="ajustaTelefone(this)">
-              <a>Aqui vai a mensagem de erro...</a>
+              <input type="tel" id="tel" placeholder="(xx) xxxx-xxxx" onkeydown="ajustaTelefone(this)" onkeypress="ajustaTelefone(this)" onkeyup="ajustaTelefone(this)" required>
+              <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
             <div class="input-box">
               <span class="details">Nome da Mãe</span>
-              <input type="text" id="mae" placeholder="Digite o nome de sua mãe">
-              <a>Aqui vai a mensagem de erro...</a>
+              <input type="text" id="mae" placeholder="Digite o nome de sua mãe" required>
+              <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
             <div class="input-box">
                 <span class="details">CPF</span>
-                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF">
-                <!-- <button onclick="ValidarCpf()">Validar</button> -->
-                <a>Aqui vai a mensagem de erro...</a>
+                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
   
               <div class="input-box">
                 <span class="details">CEP</span>
-                <input type="text" id="cep" placeholder="Digite seu CEP" onblur="preencherEndereco(this)">
-                <a>Aqui vai a mensagem de erro...</a>
+                <input type="text" id="idCep" placeholder="Digite seu CEP" onblur="preencherEndereco(this)" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div> 
   
               <div class="input-box">
                 <span class="details">Número e Complemento</span>
-                <input type="text" id="numComp" placeholder="Número e complemento" onblur="preencherEndereco(this)">
-                <a>Aqui vai a mensagem de erro...</a>
+                <input type="text" id="numComp" placeholder="Número e complemento" onblur="preencherEndereco(this)" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
 
               <div class="input-box">
                 <span class="details">Rua</span>
-                <input type="text" id="rua" placeholder="Digite sua rua" onblur="preencherEndereco(this)">
-                <a>Aqui vai a mensagem de erro...</a>
+                <input type="text" id="idRua" placeholder="Digite sua rua" onblur="preencherEndereco(this)" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
   
               <div class="input-box">
                 <span class="details">Bairro</span>
-                <input type="text" id="bairro" placeholder="Digite seu bairro" onblur="preencherEndereco(this)">
-                <a>Aqui vai a mensagem de erro...</a>
+                <input type="text" id="idBairro" placeholder="Digite seu bairro" onblur="preencherEndereco(this)" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
   
               <div class="input-box">
                 <span class="details">Estado</span>
-                <input type="text" id="estado" placeholder="Digite seu estado" onblur="preencherEndereco(this)">
-                <a>Aqui vai a mensagem de erro...</a>
+                <input type="text" id="idUf" placeholder="Digite seu estado" onblur="preencherEndereco(this)" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
 
               
               <div class="input-box">
-                <span class="details">Usuário</span>
-                <input type="text" id="username" placeholder="Crie seu usuário" minlength="6" maxlength="6">
-                <a>Aqui vai a mensagem de erro...</a>
+                <span class="details" id="registrationError">Usuário</span>
+                <input type="text" id="username" placeholder="Crie seu usuário" minlength="6" maxlength="6" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
 
               <div class="input-box">
-                <span class="details">Senha</span>
-                <input type="password" id="password" placeholder="Digite sua senha" minlength="8">
-                <a>Aqui vai a mensagem de erro...</a>
+                <span class="details" id="registrationError">Senha</span>
+                <input type="password" id="password" placeholder="Digite sua senha" minlength="8" onblur="validarSenha()" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
   
               <div class="input-box">
                 <span class="details">Confirme sua senha</span>
-                <input type="password" id="confirmPassword" placeholder="Confirme sua senha" minlength="8">
-                <a>Aqui vai a mensagem de erro...</a>
+                <input type="password" id="confirmPassword" placeholder="Confirme sua senha" minlength="8" onblur="validarSenha()" required>
+                <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
           </div>
 
           <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1"/>
-            <input type="radio" name="gender" id="dot-2"/>
-            <input type="radio" name="gender" id="dot-3"/>
+            <input type="radio" name="gender" id="dot-1">
+            <input type="radio" name="gender" id="dot-2">
+            <input type="radio" name="gender" id="dot-3">
             <span class="gender-title">Gênero</span>
 
             <div class="category">
@@ -130,7 +129,7 @@
           </div>
 
           <div class="policy">
-            <input type="checkbox">
+            <input type="checkbox" required>
             <h3>Eu aceito todos os termos e condições.</h3>
           </div>
 
