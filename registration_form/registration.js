@@ -350,78 +350,108 @@ senhaC.addEventListener('input', validarSenha);
  
  // ***** Validações CPF *****
 
- function checkInputCpf() {
+//  const cpf = document.getElementById("cpf");
 
-  const cpfValue = cpf.value;
+//  function validarCPF(cpf) {
+//   cpf = cpf.replace(/[^\d]+/g, ''); // Remove caracteres não numéricos
 
+//   if (cpf.length !== 11) {
+//       return false; // CPF deve ter 11 dígitos
+//   }
 
+//   // Elimina CPFs inválidos conhecidos
+//   if (/^(\d)\1+$/.test(cpf)) {
+//       return false;
+//   }
 
+//   let soma;
+//   let resto;
 
-   const formItem = cpf.parentElement;
+//   // Valida primeiro dígito verificador
+//   soma = 0;
+//   for (let i = 1; i <= 9; i++) {
+//       soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+//   }
+//   resto = (soma * 10) % 11;
 
-      formItem.className = "input-box"
+//   if ((resto === 10) || (resto === 11)) {
+//       resto = 0;
+//   }
+//   if (resto !== parseInt(cpf.substring(9, 10))) {
+//       return false;
+//   }
 
+//   // Valida segundo dígito verificador
+//   soma = 0;
+//   for (let i = 1; i <= 10; i++) {
+//       soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+//   }
+//   resto = (soma * 10) % 11;
 
+//   if ((resto === 10) || (resto === 11)) {
+//       resto = 0;
+//   }
+//   if (resto !== parseInt(cpf.substring(10, 11))) {
+//       return false;
+//   }
 
+//   return true;
+// }
 
-  if(cpfValue === "") {
+// // Testando a função
+// console.log(validarCPF('123.456.789-09')); // Exemplo de CPF inválido
+// console.log(validarCPF('111.444.777-35')); // Exemplo de CPF válido
 
-      // mostrar o aviso e mostrar a msg de erro 
+document.getElementById('cpf').addEventListener('input', function(e) {
+  var value = e.target.value;
+  var cpfPattern = value.replace(/\D/g, '') // Remove qualquer coisa que não seja número
+						.replace(/(\d{3})(\d)/, '$1.$2') // Adiciona ponto após o terceiro dígito
+						.replace(/(\d{3})(\d)/, '$1.$2') // Adiciona ponto após o sexto dígito
+						.replace(/(\d{3})(\d)/, '$1-$2') // Adiciona traço após o nono dígito
+						.replace(/(-\d{2})\d+?$/, '$1'); // Impede entrada de mais de 11 dígitos
+  e.target.value = cpfPattern;
+});
 
-      errorInput(cpf, "O CPF é obrigatório.")
+// function validaCPF(cpf) {
+//   cpf = cpf.replace(/\D+/g, '');
+//   if (cpf.length !== 11) return false;
 
-    }else if(!isValidCPF(cpfValue)) {
+//   let soma = 0;
+//   let resto;
+//   if (/^(\d)\1{10}$/.test(cpf)) return false; // Verifica sequências iguais
 
-     
+//   for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
+//   resto = (soma * 10) % 11;
+//   if ((resto === 10) || (resto === 11)) resto = 0;
+//   if (resto !== parseInt(cpf.substring(9, 10))) return false;
 
-      errorInput(cpf, "O CPF é invalido.")
+//   soma = 0;
+//   for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i-1, i)) * (12 - i);
+//   resto = (soma * 10) % 11;
+//   if ((resto === 10) || (resto === 11)) resto = 0;
+//   if (resto !== parseInt(cpf.substring(10, 11))) return false;
 
-    
+//   return true;
+// }
 
-  }
+// document.getElementById('form').addEventListener('submit', function(e) {
+//   e.preventDefault(); // Impede o envio do formulário
+//   var cpf = document.getElementById('cpf').value;
 
-
-
-
-
-
-}
-
-
-
-
-
-
-function isValidCPF(cpf) {
-
-  cpf = cpf.replace(/[^\d]+/g,'');
-
-  if (cpf === '' || cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
-
-  let v = []
-
-  v[0] = 0
-
-  v[1] = 0
-
-  for (let i = 1; i <= 9; ++i)
-
-      v[0] += +(cpf.charAt(i-1))
-
-      v[1] += +(cpf.charAt(i))
-
-  v[1] += +(cpf.charAt(9))
-
-  v[0] = ((v[0] % 11) % 10)
-
-  v[1] = ((v[1] % 11) % 10)
-
-  return `${v[0]}${v[1]}` === cpf.substr(9, 2)
-
-}
+//   if (cpf === '') {
+//   errorMessage += 'O campo Nome é obrigatório.\n';
+//   }else {
+//     // Se não houver erros, envia o formulário
+//     alert('Cadastrado com sucesso!');
+ 
+//      document.getElementById('form').submit();
+//   }
+  
+// });
 
  // ***** FIM Validações CPF *****
 
+ 
 // ***** localStorage *****
 
 function handleRegistration() {

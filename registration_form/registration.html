@@ -4,24 +4,25 @@
     <meta charset="UTF-8" />
     <title>Cadastre-se</title>
     <link rel="stylesheet" href="registration.css"/>
+    <link rel="shortcut icon" href="/img/icon_store.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
     <div class="container">
       <div class="title">Cadastre-se</div>
       <div class="content">
-        <form id="form" class="form" onsubmit="return handleRegistration()"  action="../main.html">
+        <form id="form" class="form" onsubmit="return handleRegistration()" action="/index_2.html">
           <div class="user-details">
             
             <div class="input-box">
               <span class="details">Nome completo</span>
-              <input type="text" id="fullname" placeholder="Digite seu nome completo" minlength="15" maxlength="80" >
+              <input type="text" id="fullname" placeholder="Digite seu nome completo" minlength="15" maxlength="80" required>
               <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
             <div class="input-box">
               <span class="details">Data de Nascimento</span>
-              <input type="date" id="dataNasc" placeholder="" >
+              <input type="date" id="dataNasc" placeholder="" required>
               <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
@@ -33,13 +34,13 @@
 
             <div class="input-box">
               <span class="details">Telefone Celular</span>
-              <input type="tel" id="cel" placeholder="(xx) xxxxx-xxxx" onkeydown="ajustaTelefone(this)" onkeypress="ajustaTelefone(this)" onkeyup="ajustaTelefone(this)" required>
+              <input type="tel" id="cel" placeholder="(xx) xxxxx-xxxx" maxlength="15" onkeydown="ajustaTelefone(this)" onkeypress="ajustaTelefone(this)" onkeyup="ajustaTelefone(this)" required>
               <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
             <div class="input-box">
               <span class="details">Telefone Fixo</span>
-              <input type="tel" id="tel" placeholder="(xx) xxxx-xxxx" onkeydown="ajustaTelefone(this)" onkeypress="ajustaTelefone(this)" onkeyup="ajustaTelefone(this)" required>
+              <input type="tel" id="tel" placeholder="(xx) xxxx-xxxx" maxlength="14" onkeydown="ajustaTelefone(this)" onkeypress="ajustaTelefone(this)" onkeyup="ajustaTelefone(this)" required>
               <!-- <a>Aqui vai a mensagem de erro...</a> -->
             </div>
 
@@ -51,7 +52,8 @@
 
             <div class="input-box">
                 <span class="details">CPF</span>
-                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF"required>
+                <!-- <button onclick="validarCPF()">Validar</button> -->
                 <!-- <a>Aqui vai a mensagem de erro...</a> -->
               </div>
   

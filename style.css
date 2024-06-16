@@ -480,6 +480,12 @@ footer {
     margin-bottom: 10px;
     color: gray;
     cursor: pointer;
+    
+}
+
+.fListItem:hover {
+    color: #369e62;
+
 }
 
 .footerRight {
@@ -624,4 +630,6 @@ footer {
         align-items: center;
         background-color: whitesmoke;
     }
+
+ 
 }
