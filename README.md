@@ -16,6 +16,6 @@ Git e Github</br>
 <h1>💻 Projeto</h1>
 Desenvolvido para atender a disciplina: Projeto de Desenvolvimento em Front-End, onde exercitei e treinei alguns conceitos aprendidos com as tecnologias utilizadas.
 
-Acesse o projeto em andamento, <a href="https://soulfit-website.vercel.app/index.html">clicando aqui.</a> 
+Acesse o projeto em andamento, <a href="https://soulfitstore.netlify.app/">clicando aqui.</a> 
 
 
